@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.0.0
-Release  : 1
+Release  : 2
 URL      : http://gmic.eu/files/source/gmic_2.0.0.tar.gz
 Source0  : http://gmic.eu/files/source/gmic_2.0.0.tar.gz
 Summary  : No detailed summary available
