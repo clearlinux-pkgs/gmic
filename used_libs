@@ -1,5 +1,3 @@
-libX11.so.6
-libXext.so.6
 libc.so.6
 libfftw3.so.3
 libfftw3_threads.so.3

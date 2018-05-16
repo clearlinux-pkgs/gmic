@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.0.0
-Release  : 4
+Release  : 5
 URL      : http://gmic.eu/files/source/gmic_2.0.0.tar.gz
 Source0  : http://gmic.eu/files/source/gmic_2.0.0.tar.gz
 Summary  : No detailed summary available
@@ -16,7 +16,6 @@ Requires: gmic-doc
 BuildRequires : cmake
 BuildRequires : gimp-dev
 BuildRequires : libjpeg-turbo-dev
-BuildRequires : pkgconfig(cairo)
 BuildRequires : pkgconfig(fftw3)
 BuildRequires : pkgconfig(opencv)
 
@@ -67,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526428857
+export SOURCE_DATE_EPOCH=1526430420
 mkdir clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -82,7 +81,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1526428857
+export SOURCE_DATE_EPOCH=1526430420
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
