@@ -2,3 +2,4 @@
 # picked up automatically. One name per line, no whitespace.
 gimp-dev
 libjpeg-turbo-dev
+opencv-dev
