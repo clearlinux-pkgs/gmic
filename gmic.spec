@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.7.0
-Release  : 10
+Release  : 11
 URL      : https://gmic.eu/files/source/gmic_2.7.0.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_2.7.0.tar.gz
 Summary  : No detailed summary available
