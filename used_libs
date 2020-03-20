@@ -1,5 +1,6 @@
 libX11.so.6
 libc.so.6
+libcurl.so.4
 libfftw3.so.3
 libfftw3_threads.so.3
 libgcc_s.so.1
@@ -7,8 +8,8 @@ libgomp.so.1
 libjpeg.so.62
 libm.so.6
 libmvec.so.1
-libopencv_core.so.4.1
-libopencv_videoio.so.4.1
+libopencv_core.so.4.2
+libopencv_videoio.so.4.2
 libpng16.so.16
 libpthread.so.0
 libstdc++.so.6
