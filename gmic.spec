@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.8.4
-Release  : 27
+Release  : 28
 URL      : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Summary  : No detailed summary available
@@ -92,6 +92,15 @@ Group: Default
 man components for the gmic package.
 
 
+%package staticdev
+Summary: staticdev components for the gmic package.
+Group: Default
+Requires: gmic-dev = %{version}-%{release}
+
+%description staticdev
+staticdev components for the gmic package.
+
+
 %prep
 %setup -q -n gmic-2.8.4
 cd %{_builddir}/gmic-2.8.4
@@ -101,7 +110,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656116935
+export SOURCE_DATE_EPOCH=1662592279
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -121,10 +130,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -msse2avx -mtune=skylake "
-export FCFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -msse2avx -mtune=skylake "
-export FFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -msse2avx -mtune=skylake "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -msse2avx -mtune=skylake "
+export CFLAGS="$CFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -mtune=skylake "
+export FCFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -mtune=skylake "
+export FFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -mtune=skylake "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -march=x86-64-v3 -mprefer-vector-width=256 -mtune=skylake "
 export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
@@ -134,13 +143,13 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1656116935
+export SOURCE_DATE_EPOCH=1662592279
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gmic
-cp %{_builddir}/gmic-2.8.4/COPYING %{buildroot}/usr/share/package-licenses/gmic/e48dd1d9bcb69a8b411bdcffcb04012d4b02e9e4
-cp %{_builddir}/gmic-2.8.4/gmic-qt/COPYING %{buildroot}/usr/share/package-licenses/gmic/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/gmic-2.8.4/gmic-qt/cmake/modules/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/gmic/ff3ed70db4739b3c6747c7f624fe2bad70802987
-cp %{_builddir}/gmic-2.8.4/zart/Licence_CeCILL_V2-en.html %{buildroot}/usr/share/package-licenses/gmic/5e489eefae18f5cc77435302ef0d9d04fac672f1
+cp %{_builddir}/gmic-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gmic/e48dd1d9bcb69a8b411bdcffcb04012d4b02e9e4
+cp %{_builddir}/gmic-%{version}/gmic-qt/COPYING %{buildroot}/usr/share/package-licenses/gmic/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/gmic-%{version}/gmic-qt/cmake/modules/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/gmic/ff3ed70db4739b3c6747c7f624fe2bad70802987
+cp %{_builddir}/gmic-%{version}/zart/Licence_CeCILL_V2-en.html %{buildroot}/usr/share/package-licenses/gmic/5e489eefae18f5cc77435302ef0d9d04fac672f1
 pushd clr-build-avx2
 %make_install_v3  || :
 popd
@@ -163,6 +172,7 @@ popd
 /usr/lib64/cmake/gmic/GmicConfig.cmake
 /usr/lib64/cmake/gmic/GmicTargets-relwithdebinfo.cmake
 /usr/lib64/cmake/gmic/GmicTargets.cmake
+/usr/lib64/glibc-hwcaps/x86-64-v3/libgmic.so
 /usr/lib64/libgmic.so
 
 %files filemap
@@ -171,7 +181,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v3/libgmic.so
 /usr/lib64/glibc-hwcaps/x86-64-v3/libgmic.so.1
 /usr/lib64/libgmic.so.1
 
@@ -185,3 +194,7 @@ popd
 %files man
 %defattr(0644,root,root,0755)
 /usr/share/man/man1/gmic.1
+
+%files staticdev
+%defattr(-,root,root,-)
+/usr/lib64/glibc-hwcaps/x86-64-v3/libgmic.a
