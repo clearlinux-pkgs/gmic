@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.8.4
-Release  : 28
+Release  : 29
 URL      : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Summary  : No detailed summary available
@@ -19,17 +19,15 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-qmake
 BuildRequires : cmake
 BuildRequires : curl-dev
-BuildRequires : digikam-dev
 BuildRequires : gimp-dev
 BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86vm-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : libpng-dev
-BuildRequires : opencv-dev
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(fftw3)
+BuildRequires : pkgconfig(libjpeg)
 BuildRequires : pkgconfig(opencv)
 BuildRequires : qttools-dev
-BuildRequires : tiff-dev
 BuildRequires : zlib-dev
 
 %description
@@ -110,7 +108,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662592279
+export SOURCE_DATE_EPOCH=1663529963
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -143,7 +141,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662592279
+export SOURCE_DATE_EPOCH=1663529963
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gmic
 cp %{_builddir}/gmic-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gmic/e48dd1d9bcb69a8b411bdcffcb04012d4b02e9e4
