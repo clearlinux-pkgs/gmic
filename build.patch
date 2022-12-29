@@ -1,0 +1,22 @@
+--- gmic-3.1.6/src/Makefile~	2022-08-31 12:39:27.000000000 +0000
++++ gmic-3.1.6/src/Makefile	2022-12-29 15:43:47.544411195 +0000
+@@ -211,7 +211,7 @@
+ FLTO = -flto
+ OPT_CFLAGS =
+ ifdef IS_GCC
+-OPT_CFLAGS += -Ofast -mtune=generic # $(FLTO)
++OPT_CFLAGS += -Ofast  # $(FLTO)
+ OPT_LIBS = # $(FLTO)
+ endif
+ ifdef icpc
+--- gmic-3.1.6/src/Makefile~	2022-12-29 15:43:47.000000000 +0000
++++ gmic-3.1.6/src/Makefile	2022-12-29 16:12:40.217628210 +0000
+@@ -371,7 +371,7 @@
+ endif
+ endif
+ 	@echo "**"
+-	$(MAKE) lib cli gimp gmic_qt libc zart
++	$(MAKE) lib cli gimp gmic_qt libc 
+ 
+ native:
+ 	$(MAKE) "CFLAGS+=$(GMIC_STD_CFLAGS) -Ofast -march=native" "LIBS+=$(GMIC_STD_LIBS)" cli
