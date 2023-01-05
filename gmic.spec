@@ -4,7 +4,7 @@
 #
 Name     : gmic
 Version  : 2.8.4
-Release  : 34
+Release  : 35
 URL      : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Summary  : No detailed summary available
