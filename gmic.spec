@@ -5,7 +5,7 @@
 #
 Name     : gmic
 Version  : 2.8.4
-Release  : 36
+Release  : 37
 URL      : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_2.8.4.tar.gz
 Summary  : No detailed summary available
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682972781
+export SOURCE_DATE_EPOCH=1687208494
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -125,7 +125,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1682972781
+export SOURCE_DATE_EPOCH=1687208494
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gmic
 cp %{_builddir}/gmic-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gmic/e48dd1d9bcb69a8b411bdcffcb04012d4b02e9e4 || :
@@ -150,7 +150,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libgmic.so
 /usr/include/gmic.h
 /usr/lib64/cmake/gmic/GmicConfig.cmake
 /usr/lib64/cmake/gmic/GmicTargets-relwithdebinfo.cmake
