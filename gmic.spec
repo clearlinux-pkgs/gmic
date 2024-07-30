@@ -7,7 +7,7 @@
 #
 Name     : gmic
 Version  : 3.4.0
-Release  : 40
+Release  : 41
 URL      : https://gmic.eu/files/source/gmic_3.4.0.tar.gz
 Source0  : https://gmic.eu/files/source/gmic_3.4.0.tar.gz
 Summary  : No detailed summary available
